@@ -1,0 +1,169 @@
+ ./ 当前目录 ../ 父级目录 / 根目录
+主色调#72C7F1
+
+$ npm install vue
+
+# 全局安装 vue-cli
+$ npm install --global vue-cli
+# 创建一个基于 webpack 模板的新项目
+$ vue init webpack my-project（项目名）
+# 安装依赖，走你
+$ cd my-project
+$ npm install
+$ npm run dev
+
+需要template即时编译的则要选择编译器+运行时的版本
+
+
+共用的组件放到components下面
+其他页面放到pages下面
+
+//main.js
+//插件都放在main.js里面
+import Vue from 'vue'
+import IndexPage from './pages/index'
+import App from './App'
+import Layout from './components/layout'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+let router = new VueRouter({
+	//html的history模式
+	mode:'history',
+	routes:[
+		{
+			//根目录
+			path:'/',		
+			component:IndexPage
+		}
+	]
+})
+
+new Vue({
+  el: '#app',
+  //根节点的实例化对象里面
+  router,
+  template: '<Layout/>',
+  components: { Layout }
+})
+
+//layout.vue
+	<keep-alive>
+        	<router-view></router-view>
+      	</keep-alive>
+
+//index.vue
+<template v-for="product in productList">
+	<h3>{{product.title}}</h3>
+
+>><div v-if="!product.last" class="hr"></div>
+>>v-bind:href=""   :href
+>><li v-for="（item，index）in list" :class="{odd:index%2}">//index余2的时候显示odd属性,index从零开始
+
+>>使用了vue-resource，可以使用this.$http,表明所有的vue组件都可以使用这个功能
+  this.$http.get('getList').then(function(data){console.log(data)},function(err){console.log(err)})
+  //get是一个promise对象，有then方法，接收两个参数，一个成功的回调函数，一个失败的回调函数。
+
+>>proxy的作用是把当前路径转到其他路径，pathRewrite是重写路径
+>>this.$http.get('api/getBoardList')在当前路径下添加后缀地址获取数据
+>>apiServer.use('/api',apiRouter)所有数据都在api目录下传递
+>>在data下，写有boardList:[],then((res)=>{this.boardList=res.data},(err)=>{console.log(err)})这里的this是代码环境下的this，而不是执行环境下的this
+
+
+overflow:hidden隐藏
+text-overflow:ellipsis省略号
+white-space:nowrap 该宽度内不换行
+
+
+fs.readFile记得大写F
+
+express的模拟数据
+	const express = require('express');
+	const apiServer = express();
+	const bodyParser = require('body-parser');
+	//通过bodyParser引用json数据
+	apiServer.use(bodyParser.urlencoded({extended:true}));
+	apiServer.use(bodyParser.json());
+	const apiRouter = express.Router();
+	apiServer.use('/api',apiRouter);
+	//node的fs来读db.json
+	const fs = require("fs");
+	apiRouter.get('/',function(req,res){
+	  res.json({message:'hooray!welcome to our api!'})
+	});
+	apiRouter.route('/:apiName')//根目录下的apiName
+	//不管是get post delete都调用这个回调
+	.all(function(req,res){
+	  fs.readFile('./db.json','utf8',function(err,data){
+	    if(err) throw err;
+	    /*console.log(data.toString());*/
+	    var data = JSON.parse(data);//转化为js对象
+	    if(data[req.params.apiName]){//当前端口名存在
+	      //以json的形式返回当前端口名
+	      res.json(data[req.params.apiName]);
+	    }
+	    else{
+	      res.send('no such api name');
+	    }
+	  });
+	});
+
+	//监听端口
+	apiServer.listen(8089,function(err){
+	  if (err) {
+	    console.log(err);
+	    return;
+	  }
+	  console.log('Listening at http://localhost:8089');
+	})
+
+幻灯片
+
+		父组件
+【事件】	  ↑↓  【子组件属性：props：接收什么数据】
+onchange		slides（数组）
+		vuejs子组件
+
+幻灯片数据通过require引入图片，使图片分析到具体的位置
+webpack打包后是打包后的解析
+注意：当<img :src="imgSrc">的时候，在export {}里面的imgSrc要用require，
+否则webpack不会打包到项目里面。
+
+【父组件向子组件传数据】
+//slideShow.vue
+//从父组件接收什么数据
+props:{
+	slides:{
+		type:Array,
+		default
+}
+}
+
+//index.vue父组件
+data下有slides的数据，而且<slide-show :slides="slides">数据传到了子组件里面
+
+写动画前先利用absolute保证图片的位置
+
+this.$emit()的作用就是触发自定义函数
+
+【子组件向父组件传数据】
+子组件的方法里面this.$emit('方法名',参数)
+父组件的【对应组件标签】里@方法名="父组件的方法名"
+父组件methods:{
+	声明"父组件的方法名"，补充方法体即可调用传过来的数据，记得不能this.数据,
+}
+
+技巧：closedialog（attr）{this[attr]=false}//共用方法体，通过传递不同的属性使得关闭不同名字的弹窗
+
+//关于或符号||，只要有一个true则返回true，否则为false。
+
+//记得写this
+
+
+【退出功能和注册功能还没实现】
+
+差异化很大的页面用嵌套路由
+
+后声明的样式更重要
+
+最外层html设置overflow:hidden则子标签会占据位置；子标签设置width，则子子标签width一样，设置
