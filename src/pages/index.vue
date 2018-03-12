@@ -71,67 +71,67 @@ export default {
       slides:[
         {
           src:require('../assets/slideShow/pic1.jpg'),
-          title:'xxx1',
+          title:'新品上市',
           href:'detail/count'
         },
         {
           src:require('../assets/slideShow/pic2.jpg'),
-          title:'xxx2',
+          title:'护肤套装',
           href:'detail/forecast'
         },
         {
           src:require('../assets/slideShow/pic3.jpg'),
-          title:'xxx3',
+          title:'彩妆特惠',
           href:'detail/analysis'
         },
         {
           src:require('../assets/slideShow/pic4.jpg'),
-          title:'xxx4',
+          title:'品牌大促',
           href:'detail/publish'
         }
       ],
       productList:{
         pc:{
-          title:"pc应用",
+          title:"彩妆",
           list:[
             {
-              name:'数据统计',
+              name:'口红',
               url:'detail/count'
             },
             {
-              name:'数据预测',
+              name:'粉底',
               url:'detail/forecast'
             },
             {
-              name:'流量分析',
+              name:'腮红',
               url:'detail/analysis',
               hot:true
             },
             {
-              name:'广告发布',
+              name:'眼影',
               url:'detail/publish'
             }
           ]
         },
         app:{
           last:"true",
-          title:"手机应用",
+          title:"护肤",
           list:[
             {
-              name:"91助手",
+              name:"韩后",
               url:''
             },
             {
-              name:"产品助手",
+              name:"自然堂",
               url:'',
               hot:true
             },
             {
-              name:'智能地图',
+              name:'无印良品',
               url:''
             },
             {
-              name:'团队语音',
+              name:'韩束',
               url:''
             }
           ]
@@ -139,20 +139,20 @@ export default {
       },
       newsList:[
         {
-          title:'数据统计',
+          title:'最新优惠',
           url:''
         },
         {
-          title:'数据预测',
+          title:'会员消息',
           url:''
         },
         {
-          title:'流量分析',
+          title:'新品上市',
           url:'',
           hot:true
         },
         {
-          title:'广告发布',
+          title:'品牌大促',
           url:''
         }
       ],

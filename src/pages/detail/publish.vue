@@ -1,7 +1,7 @@
 <template>
   <div class="sales-board">
       <div class="sales-board-intro">
-        <h2>广告发布</h2>
+        <h2>隔离 </h2>
         <p>广告活动按照广告计划执行，到完成广告创作并形成广告作品之后，经过广告主的最后审核同意，即可送到预定的媒介发布刊播。这项工作一般由媒介部门的有关专业人员负责，他们的任务就是专门负责与有关媒介单位接洽，安排有关广告的发播事宜，并对发播质量实施监督。</p>
       </div>
       <div class="sales-board-form">
@@ -54,10 +54,10 @@
               </div>
           </div>
       </div>
-      <div class="sales-board-des">
+      <!-- <div class="sales-board-des">
         <h2>产品说明</h2>
         <p>广告活动按照广告计划执行，到完成广告创作并形成广告作品之后，经过广告主的最后审核同意，即可送到预定的媒介发布刊播。这项工作一般由媒介部门的有关专业人员负责，他们的任务就是专门负责与有关媒介单位接洽，安排有关广告的发播事宜，并对发播质量实施监督。</p>
-
+        
         <table class="sales-board-table">
           <tbody>
               <tr class="ui-table-row">
@@ -245,25 +245,25 @@
                       </div>
                   </td>
               </tr>
-          </tbody>
+          </tbody> -->
       </table>
       </div>
   </div>
 </template>
 
 <script>
-import VSelection from '../../components/selection'
+/*import VSelection from '../../components/selection'
 import VCounter from '../../components/base/counter'
-import VMulChooser from '../../components/base/multiplyChooser'
+import VMulChooser from '../../components/base/multiplyChooser'*/
 export default {
-  components: {
+  /*components: {
     VSelection,
     VCounter,
     VMulChooser
-  },
+  },*/
   data () {
     return {
-      tradeList: [
+/*      tradeList: [
         {
           label: '出版业',
           value: 0
@@ -302,7 +302,7 @@ export default {
           label: '专家版',
           value: 3
         }
-      ]
+      ]*/
     }
   }
 }

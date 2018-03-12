@@ -1,26 +1,26 @@
 {
   "getBoardList": [
     {
-      "title": "开放产品",
-      "description": "开放产品是一款开放产品",
+      "title": "腮红",
+      "description": "整个妆容焕然一新！",
       "saleout": false,
       "id": "school"
     },
     {
-      "title": "品牌营销",
-      "description": "品牌营销帮助你的产品更好地找到定位",
+      "title": "粉底",
+      "description": "改变自己的肤色，让肤色更柔和！",
       "saleout": false,
       "id": "boy"
     },
     {
-      "title": "使命必达",
-      "description": "使命必达快速迭代永远保持最前端的速度",
+      "title": "口红",
+      "description": "每个女生都需要一支斩男色口红！",
       "saleout": false,
       "id": "girl"
     },
     {
-      "title": "勇攀高峰",
-      "description": "帮你勇闯高峰，到达事业的顶峰",
+      "title": "隔离",
+      "description": "保护皮肤，用对隔离！",
       "saleout": false,
       "id": "girl2"
     }

@@ -6,9 +6,6 @@
     </div>
     <div class="selection-list" v-if="isDrop">
       <ul>
-        <!-- <li>1</li>
-        <li>2</li>
-        <li>3</li> -->
         <li v-for="(item,index) in selections" @click="chooseSelections(index)">{{ item.label }}</li>
       </ul>
     </div>
@@ -26,9 +23,6 @@ export default{
       }]
     }
   },
-  created:function () {
-    console.log(this.selections);
-  },
   data(){
     return{
       nowIndex:0,
@@ -42,7 +36,7 @@ export default{
     chooseSelections(index){
       this.nowIndex = index;
       this.isDrop = !this.isDrop;
-      this.$emit('on-change',nowIndex);
+      /*this.$emit('on-change',this.nowIndex);*/
     }
   }
 }
@@ -50,7 +44,7 @@ export default{
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.selection-wrap{
+/* .selection-wrap{
   position: relative;
   display: inline-block;
 }
@@ -101,29 +95,57 @@ export default{
 }
 .selection-list li:hover {
   background: #e3e3e3;
-}
-/* .selection-show{
+} */
+.selection-wrap{
   position: relative;
-  width: 100%;
+  display: inline-block;
+}
+.selection-show{
+  border: 1px solid #e3e3e3;
+  padding:0 20px 0 10px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
   height: 25px;
-  border:1px solid #eee;
-  text-align: left;
+  line-height: 25px;
+  border-radius: 2px;
+  background: #fff;
 }
 .arrow{
-  border:10px solid transparent;
-  border-top: 10px solid #eee;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid #e3e3e3;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 11px;
+  right: 4px;
+  vertical-align: middle;
+  display: inline-block;
 }
 .selection-list{
-  width: 100%;
-  float: left;
-}
-.selection-list ul{
-  border-bottom: 1px solid #eee;
+  display: inline-block;
+  text-align: center;
+  border-bottom:1px solid #e3e3e3;
+  border-top:1px solid #e3e3e3;
   position: absolute;
-  top: 25px;
-  left: 0;
-} */
+  width: 100%;
+  z-index: 5;
+}
+.selection-list li{
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  height: 25px;
+  line-height: 25px;
+  list-style: none;
+  cursor: pointer;
+  padding: 0 20px 0 10px;
+  white-space: nowrap;/*该宽度内不换行*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #fff
+
+}
+.selection-list li:hover{
+  background: #e3e3e3;
+}
 </style>

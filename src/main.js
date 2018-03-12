@@ -11,6 +11,7 @@ import CountDetailPage from './pages/detail/count'
 import ForecastDetailPage from './pages/detail/forecast'
 import AnalysisDetailPage from './pages/detail/analysis'
 import PublishDetailPage from './pages/detail/publish'
+import LibFlexible from 'lib-flexible'
 
 Vue.use(VueResource)
 Vue.use(VueRouter)

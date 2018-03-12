@@ -134,7 +134,7 @@ body{
   background-color: #434242;
 }
 .app-head-logo{
-  width: 80px;
+  width: 200px;
   height: 80px;
   margin-left: 163px;
 }

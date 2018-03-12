@@ -29,22 +29,22 @@ export default{
 		return{
 			products:[
 				{
-					name:"数据统计",
+					name:"腮红",
 					path:"count",
 					active:false
 				},
 				{
-					name:'数据预测',
+					name:'粉底',
 					path:"forecast",
 					active:false
 				},
 				{
-					name:"流量分析",
+					name:"口红",
 					path:"analysis",
 					active:false
 				},
 				{
-					name:"广告发布",
+					name:"隔离",
 					path:"publish",
 					active:false
 				}
@@ -104,7 +104,7 @@ export default{
 	width: 110px;
 	height: 110px;
 }
-.sales-board {
+/* .sales-board {
   background: #fff;
 }
 .sales-board-form {
@@ -167,7 +167,43 @@ export default{
 .sales-board-table td {
     border: 1px solid #f0f2f5;
     padding: 15px;
+} */
+.sales-board{
+	background: #fff;
 }
-
-
+.sales-board-intro{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.sales-board-intro h2{
+	font-size: 20px;
+	padding: 20px;
+}
+.sales-board-intro p{
+	/* font-size: 15px; */
+	color: #999;
+	background: #f7fcff;
+	line-height:1.8;
+	padding:10px 20px;
+}
+.sales-board-form{
+	padding:25px 20px;
+	font-size: 14px;
+	/* width: 100%; */
+	/* padding-bottom: 5px; */
+}
+.sales-board-line{
+	/* padding-left: 20px; */
+	clear: both;
+	padding-bottom: 20px;
+	/* font-size: 15px; */
+}
+.sales-board-line-left{
+	width: 100px;
+	display: inline-block;
+}
+.sales-board-line-right{
+	display: inline-block;
+	width: 75%;
+}
 </style>
